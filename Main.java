@@ -33,3 +33,16 @@ public class Main {
                     }
                     default -> throw new IllegalArgumentException("Invalid menu option! Please enter between 1 and 8.");
                 }
+
+            } catch (InputMismatchException ime) {
+                System.out.println("Invalid input! Please enter numeric values.");
+                scanner.nextLine(); // Clear the buffer
+            } catch (ArithmeticException ae) {
+                System.out.println("Math error: " + ae.getMessage());
+            } catch (IllegalArgumentException iae) {
+                System.out.println("Error: " + iae.getMessage());
+            } catch (Exception e) {
+                System.out.println("Unexpected error: " + e.getMessage());
+            }
+        }
+
